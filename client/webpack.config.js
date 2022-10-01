@@ -49,7 +49,23 @@ module.exports = () => {
       new InjectManifest({
         swSrc: './src/src-sw.js',
         swDest: 'service-worker.js',
-      })
+      }),
+      new WebpackPwaManifest({
+        name: 'JATE Text Editor',
+        short_name: 'JATE',
+        description: 'A simple text editor!',
+        background_color: '#272822',
+        theme_color: '#31a9e1',
+        start_url: './',
+        publicPath: './',
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96],
+            destination: path.join('assets', 'icons'),
+          },
+        ],
+      }),
     ],
   };
 };
