@@ -15,7 +15,7 @@
   \***************************/
 /***/ (() => {
 
-eval("const butInstall = document.getElementById('buttonInstall'); // Logic for installing the PWA\n// TODO: Add an event handler to the `beforeinstallprompt` event\n\nwindow.addEventListener('beforeinstallprompt', event => {}); // TODO: Implement a click event handler on the `butInstall` element\n\nbutInstall.addEventListener('click', async () => {}); // TODO: Add an handler for the `appinstalled` event\n\nwindow.addEventListener('appinstalled', event => {});\n\n//# sourceURL=webpack://jate/./src/js/install.js?");
+eval("const butInstall = document.getElementById('buttonInstall'); // Logic for installing the PWA\n// TODO: Add an event handler to the `beforeinstallprompt` event\n\nwindow.addEventListener('beforeinstallprompt', event => {\n  event.preventDefault();\n  butInstall.style.visibility = 'visible';\n}); // TODO: Implement a click event handler on the `butInstall` element\n\nbutInstall.addEventListener('click', async () => {\n  butInstall.setAttribute('disabled', true);\n  butInstall.textContent = 'Installed!';\n}); // TODO: Add an handler for the `appinstalled` event\n\nwindow.addEventListener('appinstalled', event => {\n  console.log('✅ app installed', event);\n});\n\n//# sourceURL=webpack://jate/./src/js/install.js?");
 
 /***/ })
 
